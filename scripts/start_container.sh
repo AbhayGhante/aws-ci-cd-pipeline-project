@@ -1,8 +1,11 @@
 #!/bin/bash
+
 set -e
 
-# Pull the Docker image from Docker Hub
-docker pull abhishekf5/simple-python-flask-app
+#login 
+echo "Abhay@2001" | docker login docker.io --username abhayghante --password-stdin
 
-# Run the Docker image as a container
-docker run -d -p 3000:3000 abhishekf5/simple-python-flask-app
+#pull
+docker pull abhayghante/simple-python-app:v1
+#run
+docker run -d -p 3000:3000 --name c1 abhayghante/simple-python-app:v1
