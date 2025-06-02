@@ -1,5 +1,8 @@
 #!/bin/bash
 set -e
 
-# Stop the running container (if any)
-echo "Hi"
+#store container id 
+containerid ='docker ps | awk -f " " '{print $1}''
+
+#remove the container
+docker rm -f $containerid
